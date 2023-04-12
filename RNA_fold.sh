@@ -13,7 +13,7 @@ done < out.fasta
 for F in *.fa
 do
 N=$(basename $F .fa) ;
-Fold-smp $F /fold/$N.ct -mfe  ;
+Fold-smp $F fold/$N.ct -mfe  ;
 done
 
 module unload rnastructure
