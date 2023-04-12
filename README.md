@@ -29,11 +29,10 @@ expand.py Input options:
 
 Set the DATAPATH environment variable to the directory containing the RNAstructure data tables. For example:
 bash
-Copy code
+
 source /opt/ohpc/pub/Software/mamba-rocky/etc/profile.d/conda.sh
 Set the OMP_NUM_THREADS environment variable to the desired number of threads for parallel processing. For example:
-arduino
-Copy code
+
 export OMP_NUM_THREADS=10
 Split the combined fasta file into individual sequences using a loop that reads the input file line by line and writes each sequence to a separate file. For example:
 while read line
@@ -50,7 +49,7 @@ This loop reads the 'expanded_sequences.fasta' file, creates a separate fasta fi
 
 Use a loop to run the partition-smp command on each fasta file and output the partition function to a corresponding .pfs file. For example:
 bash
-Copy code
+
 mkdir pfs # create a directory for output files
 cd expanded_sequences # change to directory containing fasta files
 for F in *.fa; do
@@ -64,23 +63,22 @@ This loop runs the partition-smp command on each fasta file in the directory, cr
 
 Create a directory to store the output MEA structures. For example:
 bash
-Copy code
-mkdir /data/duren_lab/jjiamut/175bp/MEA/MaxExpect
+
+mkdir /to/path/175bp/MEA/MaxExpect
 This will create a directory named 'MaxExpect' inside the 'MEA' directory.
 
 Use a loop to run the MaxExpect command on each .pfs file and output the MEA structure to the corresponding file in the 'MaxExpect' directory. For example:
 bash
-Copy code
+
 cd /data/duren_lab/jjiamut/175bp/pfs # change to directory containing .pfs files
 for F in *.pfs; do
-    N=$(basename $F .pfs) ;
-    MaxExpect $F /data/duren_lab/jjiamut/175bp/MEA/MaxExpect/$N ; # run MaxExpect on each .pfs file and output the MEA structure to the corresponding file in the 'MaxExpect' directory
+    N=$(basename $F.ct) ;
+    MaxExpect $F /to/path/175bp/MEA/MaxExpect/$N ; # run MaxExpect on each .pfs file and output the MEA structure to the corresponding file in the 'MaxExpect' directory
 done
 This loop runs the MaxExpect command on each .pfs file in the directory, creates a separate file for each sequence with the filename based on the sequence ID, and outputs the MEA structure to the corresponding file in the 'MaxExpect' directory.
 
  4.Overall, the steps to calculate the MEA structure for each sequence involves creating a directory to store the output files and using a loop to run the MaxExpect command on each .pfs file and output the MEA structure to the corresponding file in the 'MaxExpect' directory.
 Finally, unload the RNAstructure module using the command:
-arduino
-Copy code
+ 
 module unload rnastructure
 3.
