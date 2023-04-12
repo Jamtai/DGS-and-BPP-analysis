@@ -1,4 +1,4 @@
-# DGS-analysis-and-BPP-analysis
+# DGS-and-BPP-analysis
 Degerate Sequence Analysis and Base-Pairing Probability Analysis
 ## Dependency
  1.  Install RNAstructure on your computer, if it is not already installed.
