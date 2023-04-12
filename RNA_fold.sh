@@ -1,4 +1,5 @@
 module add rnastructure
+mkdir fold
 for F in *.fa
 do
     C=$(basename $F.ct) ;
