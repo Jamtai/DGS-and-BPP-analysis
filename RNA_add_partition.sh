@@ -6,7 +6,7 @@ export OMP_NUM_THREADS=10
 #in directory of fasta seqs
 for F in *.fa; do
     N=$(basename $F .fa) ;
-    partition-smp $F ../pfs/$N.pfs ;
+    partition-smp $F pfs/$N.pfs ;
     rm $F
 done
 module unload rnastructure
