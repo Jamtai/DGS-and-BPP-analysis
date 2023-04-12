@@ -5,6 +5,6 @@ mkdir ./new
 #in directory of fasta seqs
 for F in *.pfs; do
     N=$(basename $F .pfs) ;
-    MaxExpect  $F  ./new/$N ;
+    MaxExpect  $F  ./new/$N.ct ;
 done
 module unload rnastructure
