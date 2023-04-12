@@ -10,7 +10,6 @@
 #
 #module
 module add rnastructure
-export DATAPATH=/opt/ohpc/pub/Software/RNAstructure/data_tables
 export OMP_NUM_THREADS=10
 
 #loop
