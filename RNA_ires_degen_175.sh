@@ -33,7 +33,7 @@ for F in *.fa; do
     C=$(basename $F.ct) ;
     N=$(basename $F.fa) ;
     Fold-smp $F /fold/$N.ct -mfe ;
-    partition-smp $F pfs/$N.pfs ;
-    MaxExpect  $F  /to/path/175bp/new/$C ;
+    partition-smp $F /pfs/$N.pfs ;
+    MaxExpect  $F  /new/$C ;
 done
 module unload rnastructure
