@@ -37,6 +37,7 @@ export OMP_NUM_THREADS=10
 bash ./RNA_ires_degen.sh
 ```
 This loop runs 3command lines at the same time
+ 
  The Fold command on each fasta file in the directory, creates a separate .ct file for each sequence with the filename based on the sequence ID, and outputs the .ct file to the 'fold' directory. 
  The partition-smp command on each fasta file in the directory, creates a separate .pfs file for each sequence with the filename based on the sequence ID, and outputs the .pfs file to the 'pfs' directory. .
  The MaxExpect command on each .pfs file and output the MEA structure to the corresponding file in the 'new' directory.
