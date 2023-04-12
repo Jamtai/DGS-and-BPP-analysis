@@ -1,12 +1,14 @@
 # DGS-analysis-and-BPP-analysis
-degerate sequence analysis and base-pairing probability analysis
-
+Degerate Sequence Analysis and Base-Pairing Probability Analysis
+## Dependency
  1.  Install RNAstructure on your computer, if it is not already installed.
 Open a terminal or command prompt and navigate to the RNAstructure directory.
 Run the 'expand.py' script with the following command:
 php
 Copy code
+```sh
 python expand.py <input_file> <output_file>
+```
 Where <input_file> is the name of the file containing the degenerate RNA sequence, and <output_file> is the desired name for the output file containing the expanded sequence.
 
 The script will expand all 'R's and 'Y's in the input sequence to their exact nucleotides and write the expanded sequence to the output file.
