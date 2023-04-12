@@ -6,6 +6,7 @@ Open a terminal or command prompt and navigate to the RNAstructure directory.
 Run the 'expand.py' script with the following command:
 
 ```sh
+cd DGS-and-BPP-analysis
 python expand.py -f/s <input_file> <output_file>
 ```
 Where <input_file> is the name of the file containing the degenerate RNA sequence, and <output_file> is the desired name for the output file containing the expanded sequence.
@@ -26,15 +27,21 @@ expand.py Input options:
 
 Set the DATAPATH environment variable to the directory containing the RNAstructure data tables. 
 ```sh
-#Split the combined fasta file into individual sequences using a loop that reads the input file line by line and writes each sequence to a separate file. For example:
-cd DGS-and-BPP-analysis
 bash ./RNA_ires_degen.sh
 ```
-This loop runs three command lines at the same time
+Split the combined fasta file into individual sequences using a loop that reads the input file line by line and writes each sequence to a separate fasta file and
+runs three command lines.
  
- 1.The Fold command on each fasta file in the directory, creates a separate .ct file for each sequence with the filename based on the sequence ID, and outputs the .ct file to the 'fold' directory.
- 
- 2.The partition-smp command on each fasta file in the directory, creates a separate .pfs file for each sequence with the filename based on the sequence ID, and outputs the .pfs file to the 'pfs' directory. 
- 
- 3.The MaxExpect command on each .pfs file and output the MEA structure to the corresponding file in the 'new' directory. The fasta file is then removed after partition-smp is completed
+ #### 1.The Fold command on each fasta file in the directory, creates a separate .ct file for each sequence with the filename based on the sequence ID, and outputs the .ct file to the 'fold' directory.
+ ```sh
+ bash ./RNA_fold.sh
+ ```
+ #### 2.The partition-smp command on each fasta file in the directory, creates a separate .pfs file for each sequence with the filename based on the sequence ID, and outputs the .pfs file to the 'pfs' directory. 
+  ```sh
+ bash ./RNA_add_partition.sh
+ ```
+ #### 3.The MaxExpect command on each .pfs file and output the MEA structure to the corresponding file in the 'new' directory. The fasta file is then removed after partition-smp is completed
+  ```sh
+ bash ./RNA_add_MEA.sh
+ ```
 
