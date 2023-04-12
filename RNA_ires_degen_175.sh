@@ -9,9 +9,13 @@
 #SBATCH --mail-user=jjiamut@clemson.edu
 #
 #module
+
+source /opt/ohpc/pub/Software/mamba-rocky/etc/profile.d/conda.s
 module add rnastructure
-export DATAPATH=/opt/ohpc/pub/Software/RNAstructure/data_tables
 export OMP_NUM_THREADS=10
+makdir ./pfs
+mkdir ./new
+mkdir ./folr
 #split combined fasta into individual sequences
 while read line
 do
@@ -22,15 +26,14 @@ do
     else
         echo $line >> "$outfile"
     fi
-done < out.fasta
+done < output.fasta
 #loop
 #in directory of fasta seqs
 for F in *.fa; do
-    N=$(basename $F .fa) ;
-    Fold-smp $F $N.ct -mfe ;
-    #partition-smp $F pfs/$N.pfs ;
-    draw ct/$N.ct svg/$F.svg #--svg -n 1 -P pfs/$N.pfs ;
-    rm $F
+    C=$(basename $F.ct) ;
+    N=$(basename $F.fa) ;
+    Fold-smp $F /fold/$N.ct -mfe ;
+    partition-smp $F pfs/$N.pfs ;
+    MaxExpect  $F  /to/path/175bp/new/$C ;
 done
-
 module unload rnastructure
