@@ -29,11 +29,8 @@ Set the DATAPATH environment variable to the directory containing the RNAstructu
 bash
 
 ```sh
-source /opt/ohpc/pub/Software/mamba-rocky/etc/profile.d/conda.sh
-#Set the OMP_NUM_THREADS environment variable to the desired number of threads for parallel processing. For example:
-
-export OMP_NUM_THREADS=10
 #Split the combined fasta file into individual sequences using a loop that reads the input file line by line and writes each sequence to a separate file. For example:
+cd DGS-and-BPP-analysis
 bash ./RNA_ires_degen.sh
 ```
 This loop runs three command lines at the same time
