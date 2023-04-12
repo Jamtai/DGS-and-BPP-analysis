@@ -10,7 +10,7 @@
 #
 #module
 module add rnastructure
-export DATAPATH=/opt/ohpc/pub/Software/RNAstructure/data_tables
+source /opt/ohpc/pub/Software/mamba-rocky/etc/profile.d/conda.sh
 export OMP_NUM_THREADS=10
 #split combined fasta into individual sequences
 while read line
