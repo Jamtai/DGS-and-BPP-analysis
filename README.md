@@ -1,8 +1,12 @@
 # DGS-analysis-and-BPP-analysis
 degerate sequence analysis and base-pairing probability analysis
 
+To use the RNAstructure software for degerate sequence analysis and base-pairing probability analysis, you can use the following command lines:
 
-Fold is used to predict the lowest free energy structure and a set of suboptimal structures, i.e. low free energy structures, using a variety of constraints. Fold-smp is a parallel processing version for use on multi-core computers, built using OpenMP.
-partition is used to calculate the partition function for a sequence, which can be used to predict base pair probabilities.
-MaxExpect predicts the maximum expected accuracy structure, a structure that maximizes pair probabilities. The paiprobabilities are generated using a partition function calculation.
-Both of these two command lines output CT file: A CT (Connectivity Table) file contains secondary structure information for a sequence. These files are saved with a CT extension. When entering a structure to calculate the free energy, the following format must be followed.
+Fold: predicts the lowest free energy structure and suboptimal structures using various constraints. To use Fold on a multi-core computer, you can use Fold-smp, which is built using OpenMP.
+
+Partition: calculates the partition function for a sequence, which can be used to predict base pair probabilities.
+
+MaxExpect: predicts the maximum expected accuracy structure that maximizes pair probabilities. MaxExpect generates pair probabilities using a partition function calculation.
+
+Both Fold and MaxExpect output CT files, which contain secondary structure information for a sequence. CT files are saved with a CT extension. When entering a structure to calculate free energy, be sure to follow the proper formatting.
