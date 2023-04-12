@@ -1,7 +1,7 @@
 # DGS-and-BPP-analysis
 Degerate Sequence Analysis and Base-Pairing Probability Analysis
 ## Dependency
-##1.  Install RNAstructure on your computer, if it is not already installed.
+### 1.  Install RNAstructure on your computer, if it is not already installed.
 Open a terminal or command prompt and navigate to the RNAstructure directory.
 Run the 'expand.py' script with the following command:
 
@@ -22,7 +22,7 @@ expand.py Input options:
  
 
 
-##2.  To calculate the partition function for each sequence in a file containing expanded RNA sequences, you can use the RNAstructure software and follow the steps outlined below:
+### 2.  To calculate the partition function for each sequence in a file containing expanded RNA sequences, you can use the RNAstructure software and follow the steps outlined below:
 
 Set the DATAPATH environment variable to the directory containing the RNAstructure data tables. 
 ```sh
