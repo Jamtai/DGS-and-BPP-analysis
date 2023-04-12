@@ -10,7 +10,7 @@
 #
 #module
 
-source /opt/ohpc/pub/Software/mamba-rocky/etc/profile.d/conda.s
+###Secretariat source /opt/ohpc/pub/Software/mamba-rocky/etc/profile.d/conda.s
 module add rnastructure
 export OMP_NUM_THREADS=10
 makdir ./pfs
