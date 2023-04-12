@@ -9,7 +9,7 @@ do
     else
         echo $line >> "$outfile"
     fi
-done < output.fasta
+done < out.fasta
 for F in *.fa
 do
     C=$(basename $F.ct) ;
