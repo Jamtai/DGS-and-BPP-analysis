@@ -39,12 +39,5 @@ bash ./RNA_ires_degen.sh
 
 This loop runs the partition-smp command on each fasta file in the directory, creates a separate .pfs file for each sequence with the filename based on the sequence ID, and outputs the .pfs file to the 'pfs' directory. The fasta file is then removed after partition-smp is completed.
 
-
-Use a loop to run the MaxExpect command on each .pfs file and output the MEA structure to the corresponding file in the 'MaxExpect' directory.
-
- 3.Overall, the steps to calculate the MEA structure for each sequence involves creating a directory to store the output files and using a loop to run the MaxExpect command on each .pfs file and output the MEA structure to the corresponding file in the 'MaxExpect' directory.
-Finally, unload the RNAstructure module using the command:
-```sh 
-module unload rnastructure
-```
+Use a loop to run the MaxExpect command on each .pfs file and output the MEA structure to the corresponding file in the 'new' directory.
 
