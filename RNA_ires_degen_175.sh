@@ -21,10 +21,9 @@ done < output.fasta
 #loop
 #in directory of fasta seqs
 for F in *.fa; do
-    C=$(basename $F.ct) ;
-    N=$(basename $F.fa) ;
-    Fold-smp $F /fold/$N.ct -mfe ;
-    partition-smp $F /pfs/$N.pfs ;
-    MaxExpect  $F  /new/$C ;
+    N=$(basename $F .fa) ;
+    Fold-smp $F rnafold/$N.ct -mfe ;
+    partition-smp $F pfs/$N.pfs ;
+    MaxExpect  pfs/$N.pfs  new/$N.ct ;
 done
 module unload rnastructure
