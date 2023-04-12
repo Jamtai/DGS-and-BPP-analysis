@@ -11,7 +11,7 @@ python expand.py -f/s <input_file> <output_file>
 ```
 Where <input_file> is the name of the file containing the degenerate RNA sequence, and <output_file> is the desired name for the output file containing the expanded sequence.
 
-The script will expand all 'R's and 'Y's in the input sequence to their exact nucleotides and write the expanded sequence to the output file.
+The script will expand all degenerated nucleotides in the input sequence to their exact nucleotides and write the expanded sequence to the output file.
 In the case of the example sequence you provided, the command to expand the sequence using 'expand.py' would be:
 
 
